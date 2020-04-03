@@ -11,7 +11,7 @@ const signupPage = (req, res) => {
 };
 
 const logout = (req, res) => {
-  res.render('/');
+  res.redirect('/');
 };
 
 const login = (request, response) => {
