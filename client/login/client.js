@@ -72,6 +72,12 @@ const SignupWindow = (props) =>{
     );
 };
 
+const ProfileWindow = (props) =>{
+    return(
+    <h1 id="profile">Future Profile Page Coming Soon</h1>
+    );
+};
+
 const createLoginWindow = (csrf) =>{
     ReactDOM.render(
         <LoginWindow csrf={csrf} />,
@@ -82,6 +88,13 @@ const createLoginWindow = (csrf) =>{
 const createSignupWindow = (csrf) =>{
     ReactDOM.render(
         <SignupWindow csrf={csrf} />,
+        document.querySelector("#content")
+    );
+};
+
+const createProfileWindow = (csrf) =>{
+    ReactDOM.render(
+        <ProfileWindow csrf={csrf} />,
         document.querySelector("#content")
     );
 };

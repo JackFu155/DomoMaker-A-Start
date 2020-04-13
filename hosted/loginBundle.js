@@ -110,6 +110,13 @@ var SignupWindow = function SignupWindow(props) {
   );
 };
 
+var ProfileWindow = function ProfileWindow(props) {
+  return (/*#__PURE__*/React.createElement("h1", {
+      id: "profile"
+    }, "Future Profile Page Coming Soon")
+  );
+};
+
 var createLoginWindow = function createLoginWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(LoginWindow, {
     csrf: csrf
@@ -118,6 +125,12 @@ var createLoginWindow = function createLoginWindow(csrf) {
 
 var createSignupWindow = function createSignupWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(SignupWindow, {
+    csrf: csrf
+  }), document.querySelector("#content"));
+};
+
+var createProfileWindow = function createProfileWindow(csrf) {
+  ReactDOM.render( /*#__PURE__*/React.createElement(ProfileWindow, {
     csrf: csrf
   }), document.querySelector("#content"));
 };
