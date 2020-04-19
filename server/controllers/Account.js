@@ -15,6 +15,10 @@ const profilePage = (req, res) => {
   res.render('profile', { csrfToken: req.csrfToken() });
 };
 
+const linksPage = (req, res) => {
+  res.render('links', { csrfToken: req.csrfToken() });
+};
+
 const login = (request, response) => {
   const req = request;
   const res = response;
@@ -96,6 +100,7 @@ const getToken = (request, response) => {
 
 module.exports.profilePage = profilePage;
 module.exports.loginPage = loginPage;
+module.exports.linksPage = linksPage;
 module.exports.login = login;
 module.exports.logout = logout;
 module.exports.signup = signup;

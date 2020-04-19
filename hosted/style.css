@@ -6,6 +6,10 @@ html, body {
     overflow-x: hidden;
 }
 
+input.up{
+    text-transform: uppercase;
+}
+
 #logo {
     height: 40px;
     width: 40;
