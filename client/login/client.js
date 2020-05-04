@@ -4,7 +4,7 @@ const handleLogin = (e) =>{
     $("#domoMessage").animate({width:'hide'},350);
 
     if($("#user").val() == '' || $("#pass").val() ==''){
-        handleError("RAWR! Username or Password is Empty");
+        handleError("Sorry! Username or Password is Empty");
         return false;
     }
 
@@ -20,8 +20,8 @@ const handleSignup = (e) =>{
 
     $("#domoMessage").animate({width:'hide'},350);
 
-    if($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == ''){
-        handleError("RAWR! All fields are required");
+    if($("#email").val() == '' || $("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == ''){
+        handleError("Sorry! All fields are required");
         return false;
     }
 
@@ -47,6 +47,9 @@ const LoginWindow = (props) =>{
             <input id="pass" type="password" name="pass" placeholder="password"/>
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="formSubmit" type="submit" value="Sign In" />
+            <section id="inner">
+            <a href=""><h3>Forgot Password</h3></a>
+            </section>
         </form>
     );
 };
@@ -60,6 +63,8 @@ const SignupWindow = (props) =>{
               method="POST"
               className="mainForm"
         >
+            <label htmlFor="email">Email: </label>
+            <input id="email" type="text" name="email" placeholder="email"/>
             <label htmlFor="username">Username: </label>
             <input id="user" type="text" name="username" placeholder="username"/>
             <label htmlFor="pass">Password: </label>

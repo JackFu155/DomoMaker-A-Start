@@ -16,6 +16,12 @@ const AccountSchema = new mongoose.Schema({
     unique: true,
     match: /^[A-Za-z0-9_\-.]{1,16}$/,
   },
+  email: {
+    type: String,
+    required: true,
+    trim: true,
+    unique: true,
+  },
   salt: {
     type: Buffer,
     required: true,

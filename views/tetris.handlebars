@@ -11,21 +11,19 @@
   <link rel="shortcut icon" href="/assets/img/favicon.png"/>
   <link rel="stylesheet" type="text/css" href="/assets/link-style.css"/>
 </head>
-<body> 
-  <nav><a href="/links"><img id="logo" src="/assets/img/button.png" alt="face logo"/></a>
-  <a href="/logout">Logout</a><a href="/maker">Maker</a>
+<body>
+  <nav><a href="/login"><img id="logo" src="/assets/img/button.png" alt="face logo"/></a>
+    <div class="navlink"><a href="/logout">Log out</a><a href="/profile">Profile</a></div>
   </nav>
-  <img src="/assets/img/Title.png">
-  <section id="content"></section>
-  <h1>Future Profile Page</h1>
-  <a><img src="" /></a>
   <section id="outer">
-<form action="/action_page.php">
-  <label for="img">Select image:</label>
-  <input type="file" id="img" name="img" accept="image/*">
-  <input type="submit">
-</form>
+<section id="makeTetris">
   </section>
+  <section id="tetriss">
+  </section>
+  <div id="TetrisMessage"><img id="speech" src="/assets/img/speech.png" alt="speech box"/>
+    <h3><span id="errorMessage"></span></h3><img id="domo" src="assets/img/sonic.png" alt="domo"/>
   </div>
+  </section>
+  <script src="/assets/bundle.js"></script>
 </body>
 </html>

@@ -46,7 +46,7 @@ var DomoForm = function DomoForm(props) {
     }), /*#__PURE__*/React.createElement("input", {
       className: "makeDomoSubmit",
       type: "submit",
-      value: "Make Domo"
+      value: "Post Score"
     }))
   );
 };

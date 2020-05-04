@@ -7,7 +7,7 @@ var handleLogin = function handleLogin(e) {
   }, 350);
 
   if ($("#user").val() == '' || $("#pass").val() == '') {
-    handleError("RAWR! Username or Password is Empty");
+    handleError("Sorry! Username or Password is Empty");
     return false;
   }
 
@@ -22,8 +22,8 @@ var handleSignup = function handleSignup(e) {
     width: 'hide'
   }, 350);
 
-  if ($("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
-    handleError("RAWR! All fields are required");
+  if ($("#email").val() == '' || $("#user").val() == '' || $("#pass").val() == '' || $("#pass2").val() == '') {
+    handleError("Sorry! All fields are required");
     return false;
   }
 
@@ -65,7 +65,11 @@ var LoginWindow = function LoginWindow(props) {
       className: "formSubmit",
       type: "submit",
       value: "Sign In"
-    }))
+    }), /*#__PURE__*/React.createElement("section", {
+      id: "inner"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: ""
+    }, /*#__PURE__*/React.createElement("h3", null, "Forgot Password"))))
   );
 };
 
@@ -78,6 +82,13 @@ var SignupWindow = function SignupWindow(props) {
       method: "POST",
       className: "mainForm"
     }, /*#__PURE__*/React.createElement("label", {
+      htmlFor: "email"
+    }, "Email: "), /*#__PURE__*/React.createElement("input", {
+      id: "email",
+      type: "text",
+      name: "email",
+      placeholder: "email"
+    }), /*#__PURE__*/React.createElement("label", {
       htmlFor: "username"
     }, "Username: "), /*#__PURE__*/React.createElement("input", {
       id: "user",

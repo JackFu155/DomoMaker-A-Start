@@ -29,7 +29,7 @@ const DomoForm = (props) =>{
             <label htmlFor="score">Score: </label>
             <input id="domoScore" type="number" name="score" placeholder="Score"/>
             <input type="hidden" name="_csrf" value={props.csrf} />
-            <input className="makeDomoSubmit" type="submit" value="Make Domo"/>
+            <input className="makeDomoSubmit" type="submit" value="Post Score"/>
         </form>
     );
 };
