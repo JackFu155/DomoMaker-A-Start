@@ -1,3 +1,5 @@
+//Function to send email containing passsword
+
 function sendEmail() {
 	Email.send({
 	Host: "smtp.gmail.com",

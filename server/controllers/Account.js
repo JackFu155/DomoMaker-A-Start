@@ -2,31 +2,38 @@ const models = require('../models');
 
 const { Account } = models;
 
+//Loads Login Page
 const loginPage = (req, res) => {
   res.render('login', { csrfToken: req.csrfToken() });
 };
 
+//Logs out
 const logout = (req, res) => {
   req.session.destroy();
   res.redirect('/');
 };
 
+//Loads tetris scoreboard
 const tetrisPage = (req, res) => {
   res.render('tetris', { csrfToken: req.csrfToken() });
 };
 
+//Loads Forgot Password Page
 const forgotPage = (req, res) => {
   res.render('forgot', { csrfToken: req.csrfToken() });
 };
 
+//Loads Profile Page
 const profilePage = (req, res) => {
   res.render('profile', { csrfToken: req.csrfToken() });
 };
 
+//Loads Links Page
 const linksPage = (req, res) => {
   res.render('links', { csrfToken: req.csrfToken() });
 };
 
+//Login Function
 const login = (request, response) => {
   const req = request;
   const res = response;
@@ -50,6 +57,7 @@ const login = (request, response) => {
   });
 };
 
+//Signup Page
 const signup = (request, response) => {
   const req = request;
   const res = response;

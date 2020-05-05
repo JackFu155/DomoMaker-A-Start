@@ -1,5 +1,6 @@
 "use strict";
 
+//Login React Function
 var handleLogin = function handleLogin(e) {
   e.preventDefault();
   $("#domoMessage").animate({
@@ -14,7 +15,8 @@ var handleLogin = function handleLogin(e) {
   console.log($("input[name=_csrf]").val());
   sendAjax('POST', $("#loginForm").attr("action"), $("#loginForm").serialize(), redirect);
   return false;
-};
+}; //Forgot React Function
+
 
 var handleForgot = function handleForgot(e) {
   e.preventDefault();
@@ -30,7 +32,8 @@ var handleForgot = function handleForgot(e) {
   console.log($("input[name=_csrf]").val());
   sendAjax('POST', $("#loginForm").attr("action"), $("#loginForm").serialize(), redirect);
   return false;
-};
+}; //React Signup Function
+
 
 var handleSignup = function handleSignup(e) {
   e.preventDefault();
@@ -49,7 +52,8 @@ var handleSignup = function handleSignup(e) {
   }
 
   sendAjax('POST', $("#signupForm").attr("action"), $("#signupForm").serialize(), redirect);
-};
+}; //Login Window HTML
+
 
 var LoginWindow = function LoginWindow(props) {
   return (/*#__PURE__*/React.createElement("form", {
@@ -89,7 +93,8 @@ var LoginWindow = function LoginWindow(props) {
       id: "forgot"
     }, "Forgot Password"))))
   );
-};
+}; //Forgot Window HTML
+
 
 var ForgotWindow = function ForgotWindow(props) {
   return (/*#__PURE__*/React.createElement("form", {
@@ -119,7 +124,8 @@ var ForgotWindow = function ForgotWindow(props) {
       onclick: "sendEmail()"
     })))
   );
-};
+}; //Signup Window HTML
+
 
 var SignupWindow = function SignupWindow(props) {
   return (/*#__PURE__*/React.createElement("form", {
@@ -167,32 +173,37 @@ var SignupWindow = function SignupWindow(props) {
       value: "Sign Up"
     }))
   );
-};
+}; //Profile Render
+
 
 var ProfileWindow = function ProfileWindow(props) {
   return (/*#__PURE__*/React.createElement("h1", {
       id: "profile"
     }, "Future Profile Page Coming Soon")
   );
-};
+}; //Login Render
+
 
 var createLoginWindow = function createLoginWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(LoginWindow, {
     csrf: csrf
   }), document.querySelector("#content"));
-};
+}; //Forgot Render
+
 
 var createForgotWindow = function createForgotWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(ForgotWindow, {
     csrf: csrf
   }), document.querySelector("#content"));
-};
+}; //Signup Render
+
 
 var createSignupWindow = function createSignupWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(SignupWindow, {
     csrf: csrf
   }), document.querySelector("#content"));
-};
+}; //Profile Create
+
 
 var createProfileWindow = function createProfileWindow(csrf) {
   ReactDOM.render( /*#__PURE__*/React.createElement(ProfileWindow, {

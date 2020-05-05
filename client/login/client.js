@@ -1,3 +1,4 @@
+//Login React Function
 const handleLogin = (e) =>{
     e.preventDefault();
 
@@ -15,6 +16,7 @@ const handleLogin = (e) =>{
     return false;
 };
 
+//Forgot React Function
 const handleForgot = (e) =>{
     e.preventDefault();
 
@@ -32,6 +34,7 @@ const handleForgot = (e) =>{
     return false;
 };
 
+//React Signup Function
 const handleSignup = (e) =>{
     e.preventDefault();
 
@@ -50,6 +53,7 @@ const handleSignup = (e) =>{
     sendAjax('POST', $("#signupForm").attr("action"), $("#signupForm").serialize(), redirect);
 };
 
+//Login Window HTML
 const LoginWindow = (props) =>{
     return (
         <form id="loginForm" name="loginForm"
@@ -71,6 +75,7 @@ const LoginWindow = (props) =>{
     );
 };
 
+//Forgot Window HTML
 const ForgotWindow = (props) =>{
     return (
         <form id="forgotForm" name="forgotForm"
@@ -89,6 +94,7 @@ const ForgotWindow = (props) =>{
     );
 };
 
+//Signup Window HTML
 const SignupWindow = (props) =>{
     return (
         <form id="signupForm" 
@@ -112,12 +118,14 @@ const SignupWindow = (props) =>{
     );
 };
 
+//Profile Render
 const ProfileWindow = (props) =>{
     return(
     <h1 id="profile">Future Profile Page Coming Soon</h1>
     );
 };
 
+//Login Render
 const createLoginWindow = (csrf) =>{
     ReactDOM.render(
         <LoginWindow csrf={csrf} />,
@@ -125,6 +133,7 @@ const createLoginWindow = (csrf) =>{
     );
 };
 
+//Forgot Render
 const createForgotWindow = (csrf) =>{
     ReactDOM.render(
         <ForgotWindow csrf={csrf} />,
@@ -132,6 +141,7 @@ const createForgotWindow = (csrf) =>{
     );
 };
 
+//Signup Render
 const createSignupWindow = (csrf) =>{
     ReactDOM.render(
         <SignupWindow csrf={csrf} />,
@@ -139,6 +149,7 @@ const createSignupWindow = (csrf) =>{
     );
 };
 
+//Profile Create
 const createProfileWindow = (csrf) =>{
     ReactDOM.render(
         <ProfileWindow csrf={csrf} />,

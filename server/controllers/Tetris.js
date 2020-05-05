@@ -1,3 +1,5 @@
+//Tetris scoreboard copied from Domo.js
+
 const models = require('../models');
 
 const { Tetris } = models;
