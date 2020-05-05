@@ -4,7 +4,7 @@ const handleDomo = (e) =>{
     $("#domoMessage").animate({width:'hide'},350);
 
     if($("#domoName").val() == '' || $("#domoScore").val() == ''){
-        handleError("RAWR! All fields are required");
+        handleError("Sorry! All fields are required");
         return false;
     }
 
@@ -46,9 +46,9 @@ const DomoList = function(props){
     const domoNodes = props.domos.map(function(domo){
         return(
             <div key={domo._id} className="domo">
-                <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
-                <h3 className="domoName">Name: {domo.name} </h3>
-                <h3 className="domoScore">Score: {domo.score} </h3>
+                
+                <h3 className="domoName"> {domo.name}: </h3>
+                <h3 className="domoScore">{domo.score} </h3>
             </div>
         );
     });
@@ -86,4 +86,5 @@ const getToken = () =>{
 
 $(document).ready(function(){
     getToken();
+    loadDomosFromServer();
 })

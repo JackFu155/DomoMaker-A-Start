@@ -7,7 +7,7 @@ var handleDomo = function handleDomo(e) {
   }, 350);
 
   if ($("#domoName").val() == '' || $("#domoScore").val() == '') {
-    handleError("RAWR! All fields are required");
+    handleError("Sorry! All fields are required");
     return false;
   }
 
@@ -65,15 +65,11 @@ var DomoList = function DomoList(props) {
     return (/*#__PURE__*/React.createElement("div", {
         key: domo._id,
         className: "domo"
-      }, /*#__PURE__*/React.createElement("img", {
-        src: "/assets/img/domoface.jpeg",
-        alt: "domo face",
-        className: "domoFace"
-      }), /*#__PURE__*/React.createElement("h3", {
+      }, /*#__PURE__*/React.createElement("h3", {
         className: "domoName"
-      }, "Name: ", domo.name, " "), /*#__PURE__*/React.createElement("h3", {
+      }, " ", domo.name, ": "), /*#__PURE__*/React.createElement("h3", {
         className: "domoScore"
-      }, "Score: ", domo.score, " "))
+      }, domo.score, " "))
     );
   });
   return (/*#__PURE__*/React.createElement("div", {
@@ -107,6 +103,7 @@ var getToken = function getToken() {
 
 $(document).ready(function () {
   getToken();
+  loadDomosFromServer();
 });
 "use strict";
 

@@ -15,6 +15,10 @@ const tetrisPage = (req, res) => {
   res.render('tetris', { csrfToken: req.csrfToken() });
 };
 
+const forgotPage = (req, res) => {
+  res.render('forgot', { csrfToken: req.csrfToken() });
+};
+
 const profilePage = (req, res) => {
   res.render('profile', { csrfToken: req.csrfToken() });
 };
@@ -42,7 +46,7 @@ const login = (request, response) => {
 
     req.session.account = Account.AccountModel.toAPI(account);
 
-    return res.json({ redirect: '/maker' });
+    return res.json({ redirect: '/links' });
   });
 };
 
@@ -105,6 +109,7 @@ const getToken = (request, response) => {
 };
 
 module.exports.profilePage = profilePage;
+module.exports.forgotPage = forgotPage;
 module.exports.tetrisPage = tetrisPage;
 module.exports.loginPage = loginPage;
 module.exports.linksPage = linksPage;

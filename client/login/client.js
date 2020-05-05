@@ -15,6 +15,23 @@ const handleLogin = (e) =>{
     return false;
 };
 
+const handleForgot = (e) =>{
+    e.preventDefault();
+
+    $("#domoMessage").animate({width:'hide'},350);
+
+    if($("#email").val() == ''){
+        handleError("It is Empty, Please enter Email");
+        return false;
+    }
+
+    console.log($("input[name=_csrf]").val());
+
+    sendAjax('POST', $("#loginForm").attr("action"), $("#loginForm").serialize(), redirect);
+
+    return false;
+};
+
 const handleSignup = (e) =>{
     e.preventDefault();
 
@@ -48,7 +65,25 @@ const LoginWindow = (props) =>{
             <input type="hidden" name="_csrf" value={props.csrf} />
             <input className="formSubmit" type="submit" value="Sign In" />
             <section id="inner">
-            <a href=""><h3>Forgot Password</h3></a>
+            <a href="/forgot"><h3 id="forgot">Forgot Password</h3></a>
+            </section>
+        </form>
+    );
+};
+
+const ForgotWindow = (props) =>{
+    return (
+        <form id="forgotForm" name="forgotForm"
+              onSubmit={handleForgot}
+              action="/forgot"
+              method="POST"
+              className="mainForm"
+        >
+            <section id="inner">
+            <label htmlFor="email">Email: </label>
+            <input id="email" type="text" name="email" placeholder="email"/>
+            <input type="hidden" name="_csrf" value={props.csrf} />
+            <input className="formSubmit" type="submit" value="Send" onclick="sendEmail()" />
             </section>
         </form>
     );
@@ -90,6 +125,13 @@ const createLoginWindow = (csrf) =>{
     );
 };
 
+const createForgotWindow = (csrf) =>{
+    ReactDOM.render(
+        <ForgotWindow csrf={csrf} />,
+        document.querySelector("#content")
+    );
+};
+
 const createSignupWindow = (csrf) =>{
     ReactDOM.render(
         <SignupWindow csrf={csrf} />,
@@ -107,6 +149,7 @@ const createProfileWindow = (csrf) =>{
 const setup = (csrf) =>{
     const loginButton = document.querySelector("#loginButton");
     const signupButton = document.querySelector("#signupButton");
+    const forgotButton = document.querySelector("#forgot");
 
     signupButton.addEventListener("click", (e) =>{
         e.preventDefault();
@@ -117,6 +160,12 @@ const setup = (csrf) =>{
     loginButton.addEventListener("click", (e) =>{
         e.preventDefault();
         createLoginWindow(csrf);
+        return false;
+    });
+
+    forgotButton.addEventListener("click", (e) =>{
+        e.preventDefault();
+        createForgotWindow(csrf);
         return false;
     });
 

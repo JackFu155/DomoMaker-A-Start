@@ -6,6 +6,7 @@ const router = (app) => {
   app.get('/getDomos', mid.requiresLogin, controllers.Domo.getDomos);
   app.get('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.loginPage);
   app.post('/login', mid.requiresSecure, mid.requiresLogout, controllers.Account.login);
+  app.get('/forgot', mid.requiresSecure, mid.requiresLogout, controllers.Account.forgotPage);
   app.post('/signup', mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
   app.get('/logout', mid.requiresLogin, controllers.Account.logout);
   app.get('/profile', mid.requiresLogin, controllers.Account.profilePage);
